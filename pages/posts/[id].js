@@ -10,6 +10,7 @@ import { AccountContext } from '../../context'
 /* import contract and owner addresses */
 import { contractAddress, ownerAddress } from '../../config'
 import Blog from '../../artifacts/contracts/Blog.sol/Blog.json'
+import { coverImageCtnStyle } from '../../styles'
 
 const ipfsURI = 'https://ipfs.io/ipfs/'
 
@@ -39,7 +40,9 @@ export default function Post({ post }) {
           {
             /* if the post has a cover image, render it */
             post.coverImage && (
-              <Image src={post.coverImage} className={coverImageStyle} alt="Cover Image" width={100} height={100} />
+              <div className={coverImageCtnStyle}>
+                <Image src={post.coverImage} className={coverImageStyle} alt="Cover Image" layout="fill" />
+              </div>
             )
           }
           <h1>{post.title}</h1>

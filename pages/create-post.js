@@ -10,6 +10,7 @@ import { create } from 'ipfs-http-client'
 import { contractAddress } from '../config'
 
 import Blog from '../artifacts/contracts/Blog.sol/Blog.json'
+import { coverImageCtnStyle } from '../styles'
 
 /* define the ipfs endpoint */
 const client = create('https://ipfs.infura.io:5001/api/v0')
@@ -92,11 +93,11 @@ function CreatePost() {
 
   return (
     <div className={container}>
-      <div>
-        {image && (
-          <Image className={coverImageStyle} src={URL.createObjectURL(image)} alt="Cover" width={50} height={50} />
-        )}
-      </div>
+      {image && (
+        <div className={coverImageCtnStyle}>
+          <Image className={coverImageStyle} src={URL.createObjectURL(image)} alt="Cover" layout="fill" />
+        </div>
+      )}
       <input
         onChange={onChange}
         name="title"

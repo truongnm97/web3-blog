@@ -1,6 +1,7 @@
 {
   "name": "web3-blog",
-  "private": true,
+  "license": "MIT",
+  "author": "truongnm97",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

@@ -34,7 +34,7 @@ export default function Home(props) {
                 <div className={linkStyle}>
                   <p className={postTitle}>{post[1]}</p>
                   <div className={arrowContainer}>
-                    <Image src="/right-arrow.svg" alt="Right arrow" className={smallArrow} width={25} height={25} />
+                    <Image src="/right-arrow.svg" alt="Right arrow" className={smallArrow} layout="fill" />
                   </div>
                 </div>
               </a>
@@ -48,7 +48,7 @@ export default function Home(props) {
           /* to create the first post */
           <button className={buttonStyle} onClick={navigate}>
             Create your first post
-            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} width={25} height={25} />
+            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} width={50} height={50} />
           </button>
         )}
       </div>
@@ -78,10 +78,9 @@ export async function getServerSideProps() {
 }
 
 const arrowContainer = css`
-  display: flex;
-  flex: 1;
-  justify-content: flex-end;
-  padding-right: 20px;
+  margin-right: 20px;
+  width: 25px;
+  position: relative;
 `
 
 const postTitle = css`
@@ -97,6 +96,7 @@ const linkStyle = css`
   margin-top: 20px;
   border-radius: 8px;
   display: flex;
+  justify-content: space-between;
 `
 
 const postList = css`
