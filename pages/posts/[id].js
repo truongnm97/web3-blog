@@ -38,7 +38,9 @@ export default function Post({ post }) {
           }
           {
             /* if the post has a cover image, render it */
-            post.coverImage && <Image src={post.coverImage} className={coverImageStyle} alt="Cover Image" />
+            post.coverImage && (
+              <Image src={post.coverImage} className={coverImageStyle} alt="Cover Image" width={100} height={100} />
+            )
           }
           <h1>{post.title}</h1>
           <div className={contentContainer}>

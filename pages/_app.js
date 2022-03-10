@@ -38,7 +38,9 @@ function MyApp({ Component, pageProps }) {
       const connection = await web3Modal.connect()
       const provider = new ethers.providers.Web3Provider(connection)
       const accounts = await provider.listAccounts()
-      setAccount(accounts[0])
+      if (accounts?.[0]) {
+        setAccount(accounts[0])
+      }
     } catch (err) {
       console.log('error:', err)
     }
@@ -50,7 +52,7 @@ function MyApp({ Component, pageProps }) {
         <div className={header}>
           <Link href="/">
             <a>
-              <Image src="/logo.svg" alt="React Logo" style={{ width: '50px' }} />
+              <Image src="/logo.svg" alt="React Logo" width={50} height={50} />
             </a>
           </Link>
           <Link href="/">

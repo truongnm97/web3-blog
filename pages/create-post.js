@@ -92,7 +92,11 @@ function CreatePost() {
 
   return (
     <div className={container}>
-      {image && <Image className={coverImageStyle} src={URL.createObjectURL(image)} alt="Cover" />}
+      <div>
+        {image && (
+          <Image className={coverImageStyle} src={URL.createObjectURL(image)} alt="Cover" width={50} height={50} />
+        )}
+      </div>
       <input
         onChange={onChange}
         name="title"

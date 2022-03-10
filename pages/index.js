@@ -29,12 +29,12 @@ export default function Home(props) {
         {
           /* map over the posts array and render a button with the post title */
           posts.map((post, index) => (
-            <Link href={`/post/${post[2]}`} key={index}>
+            <Link href={`/posts/${post[2]}`} key={index}>
               <a>
                 <div className={linkStyle}>
                   <p className={postTitle}>{post[1]}</p>
                   <div className={arrowContainer}>
-                    <Image src="/right-arrow.svg" alt="Right arrow" className={smallArrow} />
+                    <Image src="/right-arrow.svg" alt="Right arrow" className={smallArrow} width={25} height={25} />
                   </div>
                 </div>
               </a>
@@ -48,7 +48,7 @@ export default function Home(props) {
           /* to create the first post */
           <button className={buttonStyle} onClick={navigate}>
             Create your first post
-            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} />
+            <Image src="/right-arrow.svg" alt="Right arrow" className={arrow} width={25} height={25} />
           </button>
         )}
       </div>
